@@ -44,31 +44,34 @@
                          <table id="example-datatable" class="table table-vcenter table-condensed table-bordered dataTable no-footer" role="grid" aria-describedby="example-datatable_info">
                              <thead class="center">
                                  <tr role="row">
-                                     <th class="sorting_asc center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 201px;">ID</th>
-                                     <th class="sorting center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 249px;">Nama Bengkel</th>
-                                     <th class="sorting center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 249px;">Alamat</th>
+                                     <th class="sorting_asc center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 201px;">Tahun akademi</th>
+                                     <th class="sorting center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 249px;">NIM</th>
+                                     <th class="sorting center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 249px;">KDMK</th>
+                                     <th class="sorting center" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 249px;">Nilai</th>
                                      <th class="sorting_disabled center" rowspan="1" colspan="1" aria-label="Actions" style="width: 97px;">Actions</th>
                                  </tr>
                              </thead>
                              <tbody class="center">
-                                 <?php if (is_array($datamahasiswa)) : ?>
+                                 <?php if (is_array($datanilai)) : ?>
                                      <?php
-                                        foreach ($datamahasiswa as $dt) {
+                                        foreach ($datanilai as $dt) {
 
                                             ?>
                                          <tr>
+
+                                             <td><?php echo $dt->thakd; ?></td>
                                              <td class="center span2"><?php echo $dt->nim; ?></td>
 
-                                             <td><?php echo $dt->nama; ?></td>
-                                             <td class="center"><?php echo $dt->prodi; ?></td>
+                                             <td><?php echo $dt->kdmk; ?></td>
+                                             <td class="center"><?php echo $dt->nilai; ?></td>
 
                                              <td class="td-actions">
                                                  <center>
                                                      <div class="btn-group action-buttons">
 
 
-                                                         <a href="<?php echo site_url();  ?>mahasiswa/edit/<?php echo $dt->nim; ?> " class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                                         <a href="<?php echo site_url(); ?>/mahasiswa/delete/<?php echo $dt->nim; ?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                                                         <a href="<?php echo site_url();  ?>nilai/edit/<?php echo $dt->nim; ?> " class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                                                         <a href="<?php echo site_url(); ?>/nilai/delete/<?php echo $dt->nim; ?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                                                      </div>
                                                  </center>
                                              </td>
